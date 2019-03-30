@@ -1,0 +1,66 @@
+package com.java;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+
+public class Login {
+
+	private JFrame frame;
+	private JTextField Untextbox;
+	private JPasswordField Passtextbox;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Login() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblSignin = new JLabel("SIGNIN");
+		lblSignin.setBounds(86, 50, 46, 14);
+		frame.getContentPane().add(lblSignin);
+		
+		Untextbox = new JTextField();
+		Untextbox.setBounds(86, 87, 86, 20);
+		frame.getContentPane().add(Untextbox);
+		Untextbox.setColumns(10);
+		
+		Passtextbox = new JPasswordField();
+		Passtextbox.setBounds(86, 138, 86, 20);
+		frame.getContentPane().add(Passtextbox);
+		
+		JButton btnSignin = new JButton("Signin");
+		btnSignin.setBounds(83, 192, 89, 23);
+		frame.getContentPane().add(btnSignin);
+	}
+}
